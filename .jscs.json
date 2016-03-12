@@ -2,11 +2,9 @@
   "excludeFiles": [
     "node_modules/"
   ],
-  "preset": "yandex",
-  "requireQuotedKeysInObjects": true,
-  "disallowQuotedKeysInObjects": false,
+  "preset": "airbnb",
   "maximumLineLength": {
-    "value": 79,
+    "value": 120,
     "allExcept": [
       "regex",
       "comments"
@@ -21,7 +19,7 @@
     "checkRedundantReturns": true,
     "checkReturnTypes": true,
     "checkTypes": "strictNativeCase",
-    "enforceExistence": true,
+    "enforceExistence": false,
     "requireHyphenBeforeDescription": true,
     "requireNewlineAfterDescription": true,
     "requireParamDescription": true,

@@ -1,7 +1,7 @@
-# atom-linter-alex
+# atom-linter-retext
 
-[**Atom**][atom] [**linter**][linter] meets [**alex**][alex] to catch
-insensitive, inconsiderate writing.
+[**Atom**][atom] [**linter**][linter] meets [**retext**][retext] to catch
+suboptimal writing.
 
 ![screencast][]
 
@@ -10,14 +10,14 @@ insensitive, inconsiderate writing.
 With [**apm**][apm]:
 
 ```sh
-apm install linter-alex
+apm install linter-retext
 ```
 
 ## Contributing
 
-Issues regarding **atom-linter-alex** should be opened in this
+Issues regarding **atom-linter-retext** should be opened in this
 [repository][linter-issues].
-Please raise issues with **alex** on its [repository][alex-issues].
+Please raise issues with **retext** on its [repository][retext-issues].
 
 ## License
 
@@ -29,9 +29,9 @@ Please raise issues with **alex** on its [repository][alex-issues].
 
 [linter]: https://github.com/AtomLinter/Linter
 
-[alex]: https://github.com/wooorm/alex
+[retext]: https://github.com/wooorm/retext
 
-[screencast]: https://rawgit.com/wooorm/atom-linter-alex/master/screencast.gif
+[screencast]: https://rawgit.com/wooorm/atom-linter-retext/master/screencast.gif
 
 [apm]: https://github.com/atom/apm
 
@@ -39,6 +39,6 @@ Please raise issues with **alex** on its [repository][alex-issues].
 
 [author]: http://wooorm.com
 
-[linter-issues]: https://github.com/wooorm/atom-linter-alex/issues
+[linter-issues]: https://github.com/wooorm/atom-linter-retext/issues
 
-[alex-issues]: https://github.com/wooorm/alex/issues
+[retext-issues]: https://github.com/wooorm/retext/issues

@@ -1,37 +1,26 @@
 {
-  "name": "linter-alex",
-  "version": "2.0.0",
-  "description": "Linter plugin using alex to catch insensitive, inconsiderate writing",
+  "name": "linter-retext",
+  "version": "0.0.1",
+  "description": "Linter plugin using retext",
   "license": "MIT",
   "keywords": [
     "markdown",
     "text",
-    "alex",
-    "equal",
-    "race",
-    "religion",
-    "sex",
-    "orientation",
-    "identity",
-    "gender",
-    "sensitive",
-    "insensitive",
-    "neutral",
     "writing",
     "language",
     "english",
     "linter"
   ],
   "author": {
-    "name": "Titus Wormer",
-    "email": "tituswormer@gmail.com",
-    "url": "http://wooorm.com"
+    "name": "Cameron Chamberlain",
+    "email": "hi@camjc.com",
+    "url": "http://camjc.com"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/wooorm/atom-linter-alex.git"
+    "url": "https://github.com/camjc/atom-linter-retext.git"
   },
-  "bugs": "https://github.com/wooorm/atom-linter-alex/issues",
+  "bugs": "https://github.com/camjc/atom-linter-retext/issues",
   "main": "index.js",
   "files": [
     "index.js"
@@ -40,9 +29,19 @@
     "atom": ">=1.0.0 <2.0.0"
   },
   "dependencies": {
-    "alex": ">=1.6.0",
-    "atom-package-deps": "^3.0.0",
-    "minimatch": "^3.0.0"
+    "atom-package-deps": "^4.0.1",
+    "decamelize": "^1.2.0",
+    "install": "^0.6.0",
+    "minimatch": "^3.0.0",
+    "no-cliches": "dunckr/no-cliches",
+    "npm": "^3.8.1",
+    "retext": ">=2.0.0",
+    "retext-cliches": "^1.0.0",
+    "retext-intensify": "^1.1.0",
+    "retext-overuse": "^1.0.2",
+    "retext-profanities": "^1.1.0",
+    "retext-readability": "^1.3.0",
+    "retext-simplify": "^1.2.0"
   },
   "package-deps": [
     "linter"
@@ -55,15 +54,11 @@
     }
   },
   "devDependencies": {
-    "eslint": "^1.1.0",
-    "jscs": "^2.1.0",
-    "jscs-jsdoc": "^1.1.0",
-    "remark": "^3.0.0",
-    "remark-comment-config": "^2.0.0",
-    "remark-github": "^4.0.0",
-    "remark-lint": "^2.0.0",
-    "remark-slug": "^4.0.0",
-    "remark-validate-links": "^2.0.0"
+    "eslint": "^2.4.0",
+    "eslint-config-airbnb": "^6.1.0",
+    "eslint-plugin-react": "^4.2.1",
+    "jscs": "^2.11.0",
+    "jscs-jsdoc": "^1.3.1"
   },
   "scripts": {
     "lint-api": "eslint .",

@@ -1,6 +1,6 @@
 {
-  "extends": "eslint:recommended",
+  "extends": "airbnb",
   "rules": {
-    "quotes": [2, "single"]
+    "strict": 0
   }
 }
