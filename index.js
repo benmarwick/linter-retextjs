@@ -133,27 +133,18 @@ function linter() {
 
       let text = editor.getText();
 
-      let intensifyIgnore = [];
-      let simplifyIgnore = [];
+      let ignore = [];
       const readabilityOptions = {};
       const isProse = editor.getRootScopeDescriptor().scopes.some((scope) =>
         scope.indexOf('plain') > -1 || scope.indexOf('gfm') > -1);
 
       if (!isProse) {
-        intensifyIgnore = [
-          'then',
-          'try',
-          'some',
-        ];
+        ignore = settings.ignoreProgrammingWords;
 
-        simplifyIgnore = [
-          'function',
-          'provide',
-          'require',
-          'type',
-        ];
-        readabilityOptions.threshold = 8;
+        readabilityOptions.threshold = 8; // Disable
 
+        // Make code mimic prose.
+        // Unfortunately decamelize offsets the column reported when it adds a space.
         text = decamelize(text, ' ')
           .replace(/>|<|#|@|:|!|\/|'|,|\||{|}|-|=|\(|\)|\[|\]|\*/g, ' ')
           .replace(/;/g, '.');
@@ -163,10 +154,10 @@ function linter() {
         retext()
           .use(cliches)
           .use(equality)
-          .use(intensify, { ignore: intensifyIgnore })
+          .use(intensify, { ignore })
           .use(profanities)
           .use(readability, readabilityOptions)
-          .use(simplify, { ignore: simplifyIgnore })
+          .use(simplify, { ignore })
           .process(text, (err, file) => {
             if (err) {
               reject(err);
@@ -203,6 +194,19 @@ module.exports = {
       description: 'Disable files matching (minimatch) glob',
       type: 'string',
       default: '',
+    },
+    ignoreProgrammingWords: {
+      description: 'Ignore an array of words in code contexts.',
+      type: 'array',
+      default: [
+        'function',
+        'provide',
+        'require',
+        'some',
+        'then',
+        'try',
+        'type',
+      ],
     },
     grammars: {
       description: 'List of scopes for languages to ' +
