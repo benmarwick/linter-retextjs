@@ -1,6 +1,6 @@
 {
   "name": "linter-retext",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Linter plugin using retext",
   "license": "MIT",
   "keywords": [
