@@ -33,7 +33,7 @@
     "decamelize": "^1.2.0",
     "install": "^0.6.0",
     "minimatch": "^3.0.0",
-    "no-cliches": "dunckr/no-cliches",
+    "no-cliches": "git+https://github.com/dunckr/no-cliches.git#6f8f2169a703af9fc97721cb1038c26bc028f118",
     "npm": "^3.8.1",
     "retext": ">=2.0.0",
     "retext-cliches": "^1.0.0",
