@@ -119,7 +119,7 @@ function linter() {
     return new Promise((resolve, reject) => {
       let messages;
 
-      if (!retext) {
+      if (!retext || !decamelize) {
         retext = require('retext');
 
         cliches = require('retext-cliches');

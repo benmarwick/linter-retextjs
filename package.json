@@ -37,6 +37,7 @@
     "npm": "^3.8.1",
     "retext": ">=2.0.0",
     "retext-cliches": "^1.0.0",
+    "retext-equality": "^2.2.1",
     "retext-intensify": "^1.1.0",
     "retext-overuse": "^1.0.2",
     "retext-profanities": "^1.1.0",
