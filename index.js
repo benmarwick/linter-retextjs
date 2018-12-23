@@ -2,7 +2,7 @@
  * @author Cameron Chamberlain & Ben Marwick
  * @copyright 2016 Cameron Chamberlain, based on atom-linter-alex 2015 Titus Wormer.
  * @license MIT
- * @module linter:retext
+ * @module linter:retextjs
  * @fileoverview Linter.
  */
 
@@ -43,7 +43,7 @@ const config = atom.config;
  * Activate.
  */
 function activate() {
-  deps.install('linter-retext');
+  deps.install('linter-retextjs');
 }
 
 /**
@@ -115,7 +115,7 @@ function linter() {
    *  resolved with a list of linter-errors or an error.
    */
   function onchange(editor) {
-    const settings = config.get('linter-retext');
+    const settings = config.get('linter-retextjs');
 
     if (minimatch(editor.getPath(), settings.ignoreFiles)) {
       return [];
@@ -191,7 +191,7 @@ function linter() {
   }
 
   return {
-    grammarScopes: config.get('linter-retext').grammars,
+    grammarScopes: config.get('linter-retextjs').grammars,
     name: 'retext',
     scope: 'file',
     lintOnFly: true,
