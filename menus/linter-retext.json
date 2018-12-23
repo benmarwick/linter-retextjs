@@ -1,0 +1,18 @@
+{
+"menu": [
+  {
+    "label": "Packages",
+    "submenu": [
+      {
+        "label": "retext checkers",
+        "submenu": [
+          {
+            "label": "Toggle",
+            "command": "linter-retext:toggle"
+          }
+        ]
+      }
+    ]
+  }
+]
+}
