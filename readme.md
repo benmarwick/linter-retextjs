@@ -1,12 +1,14 @@
 # atom-linter-retext
 
-A plugin for [Atom's][atom] [Linter][linter] providing an interface to [retext][retext]. Retext is a natural language processor that includes checkers for bad prose. 
+[![Build Status](https://travis-ci.org/benmarwick/atom-linter-retext.svg?branch=master)](https://travis-ci.org/benmarwick/atom-linter-retext)
+
+A plugin for [Atom's][atom] [Linter][linter] providing an interface to [retext][retext]. Retext is a natural language processor that includes checkers for bad prose.
 
 This package will provide these checkers:
 
-- [cliches](https://github.com/dunckr/retext-cliches): Checks phrases for cliches 
-- [equality](https://github.com/retextjs/retext-equality): checks for possible insensitive, inconsiderate language 
-- [intensify](https://github.com/retextjs/retext-intensify): check for weak and mitigating wording 
+- [cliches](https://github.com/dunckr/retext-cliches): Checks phrases for cliches
+- [equality](https://github.com/retextjs/retext-equality): checks for possible insensitive, inconsiderate language
+- [intensify](https://github.com/retextjs/retext-intensify): check for weak and mitigating wording
 - [profanities](https://github.com/retextjs/retext-profanities): check for profane and vulgar wording
 
 It does not include [readability](https://github.com/retextjs/retext-readability), because that works at sentence-level whiel the others work at word- or short-phrase-level. The absence of this checker is the main difference with [camjc/atom-linter-retext](https://github.com/camjc/atom-linter-retext)
@@ -27,7 +29,7 @@ Please raise issues with **retext** on its [repository][retext-issues].
 
 ## License
 
-[MIT][license] © [Cameron Chamberlain][author1] & [Ben Marwick][author2] 
+[MIT][license] © [Cameron Chamberlain][author1] & [Ben Marwick][author2]
 
 Based on atom-linter-alex:
 [MIT][license] © [Titus Wormer][author]

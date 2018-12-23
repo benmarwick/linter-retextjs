@@ -9,4 +9,4 @@ script:
 - bash <(curl -s https://raw.githubusercontent.com/wooorm/atom-travis/master/install.sh)
 - export DISPLAY=":99"
 - apm install
-- npm run test-api
+- npm run test
