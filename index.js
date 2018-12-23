@@ -23,10 +23,10 @@ let cliches;
 let equality;
 let intensify;
 let profanities;
-let readability;
+// let readability;
 let simplify;
-
 let decamelize;
+let indefinite-article
 
 /*
  * Constants.
