@@ -23,7 +23,9 @@ let cliches;
 let equality;
 let intensify;
 let profanities;
-let readability;
+/* exclude this one
+ * let readability; 
+ */
 let simplify;
 
 let decamelize;
@@ -126,7 +128,7 @@ function linter() {
         equality = require('retext-equality');
         intensify = require('retext-intensify');
         profanities = require('retext-profanities');
-        readability = require('retext-readability');
+        // readability = require('retext-readability');
         simplify = require('retext-simplify');
         decamelize = require('decamelize');
       }
@@ -134,14 +136,14 @@ function linter() {
       let text = editor.getText();
 
       let ignore = [];
-      const readabilityOptions = {};
+     // const readabilityOptions = {};
       const isProse = editor.getRootScopeDescriptor().scopes.some((scope) =>
         scope.indexOf('plain') > -1 || scope.indexOf('gfm') > -1);
 
       if (!isProse) {
         ignore = settings.ignoreProgrammingWords;
 
-        readabilityOptions.threshold = 8; // Disable
+      //  readabilityOptions.threshold = 8; // Disable
 
         // Make code mimic prose.
         // Unfortunately decamelize offsets the column reported when it adds a space.
@@ -156,7 +158,7 @@ function linter() {
           .use(equality)
           .use(intensify, { ignore })
           .use(profanities)
-          .use(readability, readabilityOptions)
+          // .use(readability, readabilityOptions)
           .use(simplify, { ignore })
           .process(text, (err, file) => {
             if (err) {
