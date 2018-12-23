@@ -9,7 +9,7 @@ This package will provide these checkers:
 - [intensify](https://github.com/retextjs/retext-intensify): check for weak and mitigating wording
 - [profanities](https://github.com/retextjs/retext-profanities): check for profane and vulgar wording
 
-It does not include [readability](https://github.com/retextjs/retext-readability), because that works at sentence-level whiel the others work at word- or short-phrase-level. The absence of this checker is the main difference with [camjc/atom-linter-retext](https://github.com/camjc/atom-linter-retext)
+It does not include [readability](https://github.com/retextjs/retext-readability), because that works at sentence-level while the others work at word- or short-phrase-level. The absence of this checker is the main difference with [camjc/atom-linter-retext](https://github.com/camjc/atom-linter-retext)
 
 ## Installation
 
