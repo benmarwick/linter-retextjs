@@ -30,7 +30,7 @@ let simplify;
 
 let decamelize;
 // add some that Cameron Chamberlain doesn't have
-let diacritics
+let diacritics;
 
 /*
  * Constants.
