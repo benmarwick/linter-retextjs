@@ -1,8 +1,8 @@
 # linter-retextjs [![Build Status](https://travis-ci.org/benmarwick/atom-linter-retext.svg?branch=master)](https://travis-ci.org/benmarwick/atom-linter-retext)
 
-A plugin for [Atom's][atom] [Linter][linter] providing an interface to [retext][retext]. Retext is a natural language processor that includes checkers for bad prose.
+A plugin for [Atom's][atom] [Linter][linter] providing an interface to [retext][retext]. Retext is a natural language processor that includes plugins to check for bad prose. The full list of retext plugins is [here](https://github.com/retextjs/retext/blob/master/doc/plugins.md#list-of-plugins).
 
-This package will provide these checkers:
+This package provides these checkers:
 
 - [cliches](https://github.com/dunckr/retext-cliches): Checks phrases for cliches
 - [equality](https://github.com/retextjs/retext-equality): checks for possible insensitive, inconsiderate language
@@ -41,7 +41,7 @@ It does not include [readability](https://github.com/retextjs/retext-readability
 
 ### Running locally
 
-Clone and install from your disc to experiment with modifications: 
+Clone and install from your disc to experiment with modifications:
 
     ```
     git clone https://github.com/benmarwick/linter-retextjs.git
