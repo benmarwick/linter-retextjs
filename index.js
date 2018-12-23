@@ -30,6 +30,7 @@ let repeatedwords;
 let contractions;
 let usage;
 let indefinitearticle;
+let overuse;
 
 /*
  * Constants.
@@ -136,6 +137,7 @@ function linter() {
         contractions = require('retext-contractions');
         usage = require('retext-usage');
         indefinitearticle = require('retext-indefinite-article');
+        overuse = require('retext-overuse');
       }
 
       let text = editor.getText();
@@ -167,6 +169,7 @@ function linter() {
           .use(contractions)
           .use(usage)
           .use(indefinitearticle)
+          .use(overuse)
           .process(text, (err, file) => {
             if (err) {
               reject(err);
