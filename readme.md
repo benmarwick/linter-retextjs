@@ -1,4 +1,4 @@
-# atom-linter-retext [![Build Status](https://travis-ci.org/benmarwick/atom-linter-retext.svg?branch=master)](https://travis-ci.org/benmarwick/atom-linter-retext)
+# linter-retext [![Build Status](https://travis-ci.org/benmarwick/atom-linter-retext.svg?branch=master)](https://travis-ci.org/benmarwick/atom-linter-retext)
 
 A plugin for [Atom's][atom] [Linter][linter] providing an interface to [retext][retext]. Retext is a natural language processor that includes checkers for bad prose.
 
@@ -9,7 +9,7 @@ This package will provide these checkers:
 - [intensify](https://github.com/retextjs/retext-intensify): check for weak and mitigating wording
 - [profanities](https://github.com/retextjs/retext-profanities): check for profane and vulgar wording
 - [passive](https://github.com/retextjs/retext-passive): check for passive voice
-- [repeated words](https://github.com/retextjs/retext-repeated-words)
+- [repeated words](https://github.com/retextjs/retext-repeated-words): check for repeated words
 - [simplify](https://github.com/retextjs/retext-simplify): check phrases for simpler alternatives
 - [contractions](https://github.com/retextjs/retext-contractions): check apostrophe use in contractions
 - [usage](https://github.com/kostasx/retext-usage): warn about incorrect English usage
@@ -17,22 +17,19 @@ This package will provide these checkers:
 - [overuse](https://github.com/dunckr/retext-overuse): check words for overuse
 - [diacritics](https://github.com/retextjs/retext-diacritics): check for proper use of diacritics
 
-He was withheld while we were being fed done done the the it does’nt have to be so bad yall, it isnt like the 80’s ATM machine majorly yes he a apple an day keeps however but yet beyonce epee 
-.
-
-It does not include [readability](https://github.com/retextjs/retext-readability), because that works at sentence-level while the others work at word- or short-phrase-level. The absence of this checker is the main difference with [camjc/atom-linter-retext](https://github.com/camjc/atom-linter-retext)
+It does not include [readability](https://github.com/retextjs/retext-readability), because that works at sentence-level while the others work at word- or short-phrase-level. The absence of this checker, and the addition of several others, are the main differences with [camjc/atom-linter-retext](https://github.com/camjc/atom-linter-retext)
 
 ## Installation
 
 With [**apm**][apm], from GitHub:
 
 ```sh
-apm install benmarwick/atom-linter-retext
+apm install benmarwick/linter-retext
 ```
 
 ## Contributing
 
-Issues regarding **atom-linter-retext** should be opened in this
+Issues regarding **linter-retext** should be opened in this
 [repository][linter-issues].
 Please raise issues with **retext** on its [repository][retext-issues].
 
@@ -59,6 +56,6 @@ Based on atom-linter-alex:
 [author2]: https://github.com/benmarwick
 [author3]: https://wooorm.com/
 
-[linter-issues]: https://github.com/camjc/atom-linter-retext/issues
+[linter-issues]: https://github.com/benmarwick/linter-retext/issues
 
 [retext-issues]: https://github.com/wooorm/retext/issues

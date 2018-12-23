@@ -1,8 +1,8 @@
 /**
- * @author Cameron Chamberlain
+ * @author Cameron Chamberlain & Ben Marwick
  * @copyright 2016 Cameron Chamberlain, based on atom-linter-alex 2015 Titus Wormer.
  * @license MIT
- * @module atom:linter:retext
+ * @module linter:retext
  * @fileoverview Linter.
  */
 
