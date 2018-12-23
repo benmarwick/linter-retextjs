@@ -1,12 +1,8 @@
-language: node_js
-node_js:
-- lts/boron
-- node
-os: linux
-dist: trusty
-install: true
-script:
-- bash <(curl -s https://raw.githubusercontent.com/wooorm/atom-travis/master/install.sh)
-- export DISPLAY=":99"
-- apm install
-- npm run test-api
+language: objective-c
+
+notifications:
+  email:
+    on_success: never
+    on_failure: change
+
+script: 'curl -s https://raw.githubusercontent.com/atom/ci/master/build-package.sh | sh'
