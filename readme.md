@@ -1,7 +1,14 @@
 # atom-linter-retext
 
 [**Atom**][atom] [**linter**][linter] meets [**retext**][retext] to catch
-suboptimal writing.
+suboptimal writing. This package will provide these checkers:
+
+- [cliches](https://github.com/retextjs/retext-cliches
+- [equality](https://github.com/retextjs/retext-equality)
+- [intensify](https://github.com/retextjs/retext-intensify)
+- [profanities](https://github.com/retextjs/retext-profanities)
+
+It does not include [readability](https://github.com/retextjs/retext-readability), and this is the main difference with [camjc/atom-linter-retext](https://github.com/camjc/atom-linter-retext)
 
 ## Installation
 
