@@ -27,6 +27,7 @@ let simplify;
 let decamelize;
 let passive;
 let repeatedwords;
+let contractions;
 
 /*
  * Constants.
@@ -130,6 +131,7 @@ function linter() {
         decamelize = require('decamelize');
         passive = require('retext-passive');
         repeatedwords = require('retext-repeated-words');
+        contractions = require('retext-contractions');
       }
 
       let text = editor.getText();
@@ -158,6 +160,7 @@ function linter() {
           .use(simplify, { ignore })
           .use(passive)
           .use(repeatedwords)
+          .use(contractions)
           .process(text, (err, file) => {
             if (err) {
               reject(err);

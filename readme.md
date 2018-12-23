@@ -10,8 +10,11 @@ This package will provide these checkers:
 - [profanities](https://github.com/retextjs/retext-profanities): check for profane and vulgar wording
 - [passive](https://github.com/retextjs/retext-passive): check for passive voice
 - [repeated words](https://github.com/retextjs/retext-repeated-words)
+- [simplify](https://github.com/retextjs/retext-simplify): check phrases for simpler alternatives
+- [contractions](https://github.com/retextjs/retext-contractions): check apostrophe use in contractions
 
-He was withheld while we were being fed done done done the the the .
+He was withheld while we were being fed done done the the it does’nt have to be so bad yall, it isnt like the 80’s
+.
 
 It does not include [readability](https://github.com/retextjs/retext-readability), because that works at sentence-level while the others work at word- or short-phrase-level. The absence of this checker is the main difference with [camjc/atom-linter-retext](https://github.com/camjc/atom-linter-retext)
 
