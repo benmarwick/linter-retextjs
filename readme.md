@@ -1,14 +1,15 @@
 # atom-linter-retext
 
-[**Atom**][atom] [**linter**][linter] meets [**retext**][retext] to catch
-suboptimal writing. This package will provide these checkers:
+A plugin for [Atom's][atom] [Linter][linter] providing an interface to [retext][retext]. Retext is a natural language processor that includes checkers for bad prose. 
 
-- [cliches](https://github.com/dunckr/retext-cliches)
-- [equality](https://github.com/retextjs/retext-equality)
-- [intensify](https://github.com/retextjs/retext-intensify)
-- [profanities](https://github.com/retextjs/retext-profanities)
+This package will provide these checkers:
 
-It does not include [readability](https://github.com/retextjs/retext-readability), and this is the main difference with [camjc/atom-linter-retext](https://github.com/camjc/atom-linter-retext)
+- [cliches](https://github.com/dunckr/retext-cliches): Checks phrases for cliches 
+- [equality](https://github.com/retextjs/retext-equality): checks for possible insensitive, inconsiderate language 
+- [intensify](https://github.com/retextjs/retext-intensify): check for weak and mitigating wording 
+- [profanities](https://github.com/retextjs/retext-profanities): check for profane and vulgar wording
+
+It does not include [readability](https://github.com/retextjs/retext-readability), because that works at sentence-level whiel the others work at word- or short-phrase-level. The absence of this checker is the main difference with [camjc/atom-linter-retext](https://github.com/camjc/atom-linter-retext)
 
 ## Installation
 
