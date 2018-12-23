@@ -24,13 +24,13 @@ let equality;
 let intensify;
 let profanities;
 /* exclude this one
- * let readability; 
+ * let readability;
  */
 let simplify;
 
 let decamelize;
 // add some that Cameron Chamberlain doesn't have
-let diacritics
+let diacritics;
 
 /*
  * Constants.
