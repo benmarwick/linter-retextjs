@@ -51,7 +51,7 @@ Clone and install from your disc to experiment with modifications:
 
 ## Contributing
 
-Issues regarding **linter-retext** should be opened in this
+Issues regarding **linter-retextjs** should be opened in this
 [repository][linter-issues].
 Please raise issues with **retext** on its [repository][retext-issues].
 
@@ -78,6 +78,6 @@ Based on atom-linter-alex:
 [author2]: https://github.com/benmarwick
 [author3]: https://wooorm.com/
 
-[linter-issues]: https://github.com/benmarwick/linter-retext/issues
+[linter-issues]: https://github.com/benmarwick/linter-retextjs/issues
 
 [retext-issues]: https://github.com/wooorm/retext/issues
