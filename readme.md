@@ -8,6 +8,9 @@ This package will provide these checkers:
 - [equality](https://github.com/retextjs/retext-equality): checks for possible insensitive, inconsiderate language
 - [intensify](https://github.com/retextjs/retext-intensify): check for weak and mitigating wording
 - [profanities](https://github.com/retextjs/retext-profanities): check for profane and vulgar wording
+- [passive](https://github.com/retextjs/retext-passive): check for passive voice
+
+He was withheld while we were being fed done .
 
 It does not include [readability](https://github.com/retextjs/retext-readability), because that works at sentence-level while the others work at word- or short-phrase-level. The absence of this checker is the main difference with [camjc/atom-linter-retext](https://github.com/camjc/atom-linter-retext)
 
