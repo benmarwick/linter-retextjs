@@ -31,6 +31,7 @@ let contractions;
 let usage;
 let indefinitearticle;
 let overuse;
+let diacritics;
 
 /*
  * Constants.
@@ -138,6 +139,7 @@ function linter() {
         usage = require('retext-usage');
         indefinitearticle = require('retext-indefinite-article');
         overuse = require('retext-overuse');
+        diacritics = require('retext-diacritics');
       }
 
       let text = editor.getText();
@@ -170,6 +172,7 @@ function linter() {
           .use(usage)
           .use(indefinitearticle)
           .use(overuse)
+          .use(diacritics)
           .process(text, (err, file) => {
             if (err) {
               reject(err);

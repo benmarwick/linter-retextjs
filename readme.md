@@ -14,9 +14,10 @@ This package will provide these checkers:
 - [contractions](https://github.com/retextjs/retext-contractions): check apostrophe use in contractions
 - [usage](https://github.com/kostasx/retext-usage): warn about incorrect English usage
 - [indefinite article](https://github.com/retextjs/retext-indefinite-article): check if indefinite articles (`a`, `an`) are used correctly
-- -[overuse](https://github.com/dunckr/retext-overuse): check words for overuse
+- [overuse](https://github.com/dunckr/retext-overuse): check words for overuse
+- [diacritics](https://github.com/retextjs/retext-diacritics): check for proper use of diacritics
 
-He was withheld while we were being fed done done the the it does’nt have to be so bad yall, it isnt like the 80’s ATM machine majorly yes he a apple an day keeps however but yet 
+He was withheld while we were being fed done done the the it does’nt have to be so bad yall, it isnt like the 80’s ATM machine majorly yes he a apple an day keeps however but yet beyonce epee 
 .
 
 It does not include [readability](https://github.com/retextjs/retext-readability), because that works at sentence-level while the others work at word- or short-phrase-level. The absence of this checker is the main difference with [camjc/atom-linter-retext](https://github.com/camjc/atom-linter-retext)
