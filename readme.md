@@ -26,7 +26,7 @@ Please raise issues with **retext** on its [repository][retext-issues].
 
 ## License
 
-[MIT][license] © [Cameron Chamberlain][author] & [Ben Marwick][contributor] 
+[MIT][license] © [Cameron Chamberlain][author] & [Ben Marwick][author] 
 
 Based on atom-linter-alex:
 [MIT][license] © [Titus Wormer][author]
