@@ -129,6 +129,7 @@ function linter() {
         readability = require('retext-readability');
         simplify = require('retext-simplify');
         decamelize = require('decamelize');
+        indefinite-article = require  ('indefinite-article');
       }
 
       let text = editor.getText();
@@ -158,6 +159,7 @@ function linter() {
           .use(profanities)
           .use(readability, readabilityOptions)
           .use(simplify, { ignore })
+          .use(indefinite-article)
           .process(text, (err, file) => {
             if (err) {
               reject(err);
