@@ -9,8 +9,9 @@ This package will provide these checkers:
 - [intensify](https://github.com/retextjs/retext-intensify): check for weak and mitigating wording
 - [profanities](https://github.com/retextjs/retext-profanities): check for profane and vulgar wording
 - [passive](https://github.com/retextjs/retext-passive): check for passive voice
+- [repeated words](https://github.com/retextjs/retext-repeated-words)
 
-He was withheld while we were being fed done .
+He was withheld while we were being fed done done done the the the .
 
 It does not include [readability](https://github.com/retextjs/retext-readability), because that works at sentence-level while the others work at word- or short-phrase-level. The absence of this checker is the main difference with [camjc/atom-linter-retext](https://github.com/camjc/atom-linter-retext)
 

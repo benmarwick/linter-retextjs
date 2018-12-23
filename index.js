@@ -25,7 +25,8 @@ let intensify;
 let profanities;
 let simplify;
 let decamelize;
-let passive
+let passive;
+let repeatedwords;
 
 /*
  * Constants.
@@ -128,6 +129,7 @@ function linter() {
         simplify = require('retext-simplify');
         decamelize = require('decamelize');
         passive = require('retext-passive');
+        repeatedwords = require('retext-repeated-words');
       }
 
       let text = editor.getText();
@@ -155,6 +157,7 @@ function linter() {
           .use(profanities)
           .use(simplify, { ignore })
           .use(passive)
+          .use(repeatedwords)
           .process(text, (err, file) => {
             if (err) {
               reject(err);
