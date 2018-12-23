@@ -29,6 +29,7 @@ let profanities;
 let simplify;
 
 let decamelize;
+let diacritics
 
 /*
  * Constants.
@@ -131,6 +132,7 @@ function linter() {
         // readability = require('retext-readability');
         simplify = require('retext-simplify');
         decamelize = require('decamelize');
+        diacritics = require('diacritics')
       }
 
       let text = editor.getText();
@@ -159,6 +161,7 @@ function linter() {
           .use(intensify, { ignore })
           .use(profanities)
           // .use(readability, readabilityOptions)
+          .user(diacritics),
           .use(simplify, { ignore })
           .process(text, (err, file) => {
             if (err) {
