@@ -26,7 +26,7 @@ let profanities;
 // let readability;
 let simplify;
 let decamelize;
-let indefinite-article
+let passive
 
 /*
  * Constants.
@@ -129,7 +129,7 @@ function linter() {
         readability = require('retext-readability');
         simplify = require('retext-simplify');
         decamelize = require('decamelize');
-        indefinite-article = require  ('indefinite-article');
+        passive = require  ('passive');
       }
 
       let text = editor.getText();
@@ -159,7 +159,7 @@ function linter() {
           .use(profanities)
           .use(readability, readabilityOptions)
           .use(simplify, { ignore })
-          .use(indefinite-article)
+          .use(passive)
           .process(text, (err, file) => {
             if (err) {
               reject(err);
