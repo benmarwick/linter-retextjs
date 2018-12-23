@@ -12,10 +12,10 @@ It does not include [readability](https://github.com/retextjs/retext-readability
 
 ## Installation
 
-With [**apm**][apm]:
+With [**apm**][apm], from GitHub:
 
 ```sh
-apm install linter-retext
+apm install benmarwick/atom-linter-retext
 ```
 
 ## Contributing
@@ -26,7 +26,7 @@ Please raise issues with **retext** on its [repository][retext-issues].
 
 ## License
 
-[MIT][license] © [Cameron Chamberlain][author] & [Ben Marwick][author] 
+[MIT][license] © [Cameron Chamberlain][author1] & [Ben Marwick][author2] 
 
 Based on atom-linter-alex:
 [MIT][license] © [Titus Wormer][author]
@@ -43,7 +43,8 @@ Based on atom-linter-alex:
 
 [license]: LICENSE
 
-[author]: http://camjc.com
+[author1]: http://camjc.com
+[author2]: https://github.com/benmarwick
 
 [linter-issues]: https://github.com/camjc/atom-linter-retext/issues
 
