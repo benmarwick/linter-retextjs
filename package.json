@@ -12,15 +12,15 @@
     "linter"
   ],
   "author": {
-    "name": "Cameron Chamberlain",
+    "name": "Cameron Chamberlain, Ben Marwick",
     "email": "hi@camjc.com",
     "url": "http://camjc.com"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/camjc/atom-linter-retext.git"
+    "url": "https://github.com/benmarwick/atom-linter-retext.git"
   },
-  "bugs": "https://github.com/camjc/atom-linter-retext/issues",
+  "bugs": "https://github.com/benmarwick/atom-linter-retext/issues",
   "main": "index.js",
   "files": [
     "index.js"
@@ -42,8 +42,7 @@
     "retext-overuse": "^1.0.2",
     "retext-profanities": "^1.1.0",
     "retext-readability": "^1.3.0",
-    "retext-simplify": "^1.2.0",
-    "retext-diacritics": "^1.2.2"
+    "retext-simplify": "^1.2.0"
   },
   "package-deps": [
     "linter"
