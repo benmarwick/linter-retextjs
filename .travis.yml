@@ -2,7 +2,11 @@ language: node_js
 node_js:
 - lts/boron
 - node
+os: linux
+dist: trusty
+install: true
 script:
-- npm test
-  on:
-    tags: true
+- bash <(curl -s https://raw.githubusercontent.com/wooorm/atom-travis/master/install.sh)
+- export DISPLAY=":99"
+- apm install
+- npm run test-api
