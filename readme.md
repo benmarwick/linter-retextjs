@@ -21,11 +21,33 @@ It does not include [readability](https://github.com/retextjs/retext-readability
 
 ## Installation
 
-With [**apm**][apm], from GitHub:
+### Command Line
 
-```sh
-apm install benmarwick/linter-retext
-```
+1. Install [Atom 1.22](https://atom.io) or newer
+2. In the terminal, install the package via apm:
+
+    ```sh
+    apm install linter-retextjs
+    ```
+
+### GUI
+
+1. Install [Atom](https://atom.io)
+1. Launch Atom
+1. Open Settings View using <kbd>Cmd+,</kbd> on macOS or <kbd>Ctrl+,</kbd> on other platforms
+1. Click the Install tab on the left side
+1. Enter `linter-retextjs` in the search box and press <kbd>Enter</kbd>
+1. Click the "Install" button that appears
+
+### Running locally
+
+Clone and install from your disc to experiment with modifications: 
+
+    ```
+    git clone https://github.com/benmarwick/linter-retextjs.git
+    cd linter-retextjs
+    apm install
+    ```
 
 ## Contributing
 
