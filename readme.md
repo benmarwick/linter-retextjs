@@ -30,7 +30,7 @@ Please raise issues with **retext** on its [repository][retext-issues].
 [MIT][license] © [Cameron Chamberlain][author1] & [Ben Marwick][author2]
 
 Based on atom-linter-alex:
-[MIT][license] © [Titus Wormer][author]
+[MIT][license] © [Titus Wormer][author3]
 
 <!-- Definitions. -->
 
@@ -46,6 +46,7 @@ Based on atom-linter-alex:
 
 [author1]: http://camjc.com
 [author2]: https://github.com/benmarwick
+[author3]: https://wooorm.com/
 
 [linter-issues]: https://github.com/camjc/atom-linter-retext/issues
 
