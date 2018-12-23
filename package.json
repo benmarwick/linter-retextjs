@@ -45,7 +45,9 @@
     "retext-simplify": "^1.2.0",
     "retext-passive": "^1.3.2",
     "retext-repeated-words": "^1.2.2",
-    "retext-contractions": "^2.1.3"
+    "retext-contractions": "^2.1.3",
+    "retext-usage": "git+https://github.com/kostasx/retext-usage.git",
+    "retext-indefinite-article": "^1.1.5"
   },
   "package-deps": [
     "linter"

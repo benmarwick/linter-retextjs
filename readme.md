@@ -12,8 +12,10 @@ This package will provide these checkers:
 - [repeated words](https://github.com/retextjs/retext-repeated-words)
 - [simplify](https://github.com/retextjs/retext-simplify): check phrases for simpler alternatives
 - [contractions](https://github.com/retextjs/retext-contractions): check apostrophe use in contractions
+- [usage](https://github.com/kostasx/retext-usage): warn about incorrect English usage
+- [indefinite article](https://github.com/retextjs/retext-indefinite-article): cfheck if indefinite articles (`a`, `an`) are used correctly
 
-He was withheld while we were being fed done done the the it does’nt have to be so bad yall, it isnt like the 80’s
+He was withheld while we were being fed done done the the it does’nt have to be so bad yall, it isnt like the 80’s ATM machine majorly yes he a apple an day keeps
 .
 
 It does not include [readability](https://github.com/retextjs/retext-readability), because that works at sentence-level while the others work at word- or short-phrase-level. The absence of this checker is the main difference with [camjc/atom-linter-retext](https://github.com/camjc/atom-linter-retext)
