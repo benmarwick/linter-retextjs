@@ -1,4 +1,4 @@
-# linter-retextjs [![Build Status](https://travis-ci.org/benmarwick/atom-linter-retext.svg?branch=master)](https://travis-ci.org/benmarwick/atom-linter-retext)
+# linter-retextjs [![Build Status](https://travis-ci.org/benmarwick/linter-retextjs.svg?branch=master)](https://travis-ci.org/benmarwick/linter-retextjs)
 
 A plugin for [Atom's][atom] [Linter][linter] providing an interface to [retext][retext]. Retext is a natural language processor that includes plugins to check for bad prose. The full list of retext plugins is [here](https://github.com/retextjs/retext/blob/master/doc/plugins.md#list-of-plugins).
 
