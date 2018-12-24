@@ -30,7 +30,7 @@ let repeatedwords;
 let contractions;
 let usage;
 let indefinitearticle;
-let overuse;
+// let overuse;
 let diacritics;
 
 /*
@@ -138,7 +138,7 @@ function linter() {
         contractions = require('retext-contractions');
         usage = require('retext-usage');
         indefinitearticle = require('retext-indefinite-article');
-        overuse = require('retext-overuse');
+        // overuse = require('retext-overuse');
         diacritics = require('retext-diacritics');
       }
 
@@ -171,7 +171,7 @@ function linter() {
           .use(contractions)
           .use(usage)
           .use(indefinitearticle)
-          .use(overuse)
+          // .use(overuse)
           .use(diacritics)
           .process(text, (err, file) => {
             if (err) {

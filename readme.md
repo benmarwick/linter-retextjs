@@ -14,7 +14,6 @@ This package provides these checkers:
 - [contractions](https://github.com/retextjs/retext-contractions): check apostrophe use in contractions
 - [usage](https://github.com/kostasx/retext-usage): warn about incorrect English usage
 - [indefinite article](https://github.com/retextjs/retext-indefinite-article): check if indefinite articles (`a`, `an`) are used correctly
-- [overuse](https://github.com/dunckr/retext-overuse): check words for overuse
 - [diacritics](https://github.com/retextjs/retext-diacritics): check for proper use of diacritics
 
 It does not include [readability](https://github.com/retextjs/retext-readability), because that works at sentence-level while the others work at word- or short-phrase-level. The absence of this checker, and the addition of several others, are the main differences with [camjc/atom-linter-retext](https://github.com/camjc/atom-linter-retext)
