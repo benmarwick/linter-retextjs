@@ -2,17 +2,21 @@
 
 A plugin for [Atom's][atom] [Linter][linter] providing an interface to [retext][retext]. Retext is a natural language processor that includes plugins to check for bad prose. The full list of retext plugins is [here](https://github.com/retextjs/retext/blob/master/doc/plugins.md#list-of-plugins).
 
-This package provides these checkers:
+![](retextjs-demo.gif)
+
+This package is like a super-set of linters that combines the checks provided by linter-alex, write-good, linter-just-say-no, and [others](https://hackernoon.com/lint-lint-and-away-linters-for-the-english-language-70f4b22cc73c). It was inspired by the discussion on the [Using Atom for academic writing](https://discuss.atom.io/t/using-atom-for-academic-writing/19222/64?u=benmarwick)
+
+This package provides these [retext][retext] checkers:
 
 - [cliches](https://github.com/dunckr/retext-cliches): Checks phrases for cliches
-- [equality](https://github.com/retextjs/retext-equality): checks for possible insensitive, inconsiderate language
-- [intensify](https://github.com/retextjs/retext-intensify): check for weak and mitigating wording
+- [equality](https://github.com/retextjs/retext-equality): checks for possible insensitive, inconsiderate language, equivalent to [linter-alex](https://github.com/get-alex/atom-linter-alex)
+- [intensify](https://github.com/retextjs/retext-intensify): check for weak and mitigating wording, similar to [linter-just-say-no](https://atom.io/packages/linter-just-say-no)
 - [profanities](https://github.com/retextjs/retext-profanities): check for profane and vulgar wording
-- [passive](https://github.com/retextjs/retext-passive): check for passive voice
+- [passive](https://github.com/retextjs/retext-passive): check for passive voice, similar to [linter-write-good](https://atom.io/packages/linter-write-good)
 - [repeated words](https://github.com/retextjs/retext-repeated-words): check for repeated words
 - [simplify](https://github.com/retextjs/retext-simplify): check phrases for simpler alternatives
 - [contractions](https://github.com/retextjs/retext-contractions): check apostrophe use in contractions
-- [usage](https://github.com/kostasx/retext-usage): warn about incorrect English usage
+- [usage](https://github.com/kostasx/retext-usage): warn about incorrect English usage, similar to [linter-proselint](https://atom.io/packages/linter-proselintThis package is like a super-set that includes linter-alex, write-good, linter-just-say-no, and [others](https://hackernoon.com/lint-lint-and-away-linters-for-the-english-language-70f4b22cc73c))
 - [indefinite article](https://github.com/retextjs/retext-indefinite-article): check if indefinite articles (`a`, `an`) are used correctly
 - [diacritics](https://github.com/retextjs/retext-diacritics): check for proper use of diacritics
 
@@ -22,12 +26,12 @@ It does not include [readability](https://github.com/retextjs/retext-readability
 
 ### Command Line
 
-1. Install [Atom 1.22](https://atom.io) or newer
+1. Install [Atom](https://atom.io)
 2. In the terminal, install the package via apm:
 
-    ```sh
-    apm install linter-retextjs
-    ```
+```sh
+apm install linter-retextjs
+```
 
 ### GUI
 
@@ -42,11 +46,11 @@ It does not include [readability](https://github.com/retextjs/retext-readability
 
 Clone and install from your disc to experiment with modifications:
 
-    ```
-    git clone https://github.com/benmarwick/linter-retextjs.git
-    cd linter-retextjs
-    apm install
-    ```
+```
+git clone https://github.com/benmarwick/linter-retextjs.git
+cd linter-retextjs
+apm install
+```
 
 ## Contributing
 
