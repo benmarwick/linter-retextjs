@@ -16,7 +16,7 @@ This package provides these [retext][retext] checkers:
 - [repeated words](https://github.com/retextjs/retext-repeated-words): check for repeated words
 - [simplify](https://github.com/retextjs/retext-simplify): check phrases for simpler alternatives
 - [contractions](https://github.com/retextjs/retext-contractions): check apostrophe use in contractions
-- [usage](https://github.com/kostasx/retext-usage): warn about incorrect English usage, similar to [linter-proselint](https://atom.io/packages/linter-proselintThis package is like a super-set that includes linter-alex, write-good, linter-just-say-no, and [others](https://hackernoon.com/lint-lint-and-away-linters-for-the-english-language-70f4b22cc73c))
+- [usage](https://github.com/kostasx/retext-usage): warn about incorrect English usage, similar to [linter-proselint](https://atom.io/packages/linter-proselint). 
 - [indefinite article](https://github.com/retextjs/retext-indefinite-article): check if indefinite articles (`a`, `an`) are used correctly
 - [diacritics](https://github.com/retextjs/retext-diacritics): check for proper use of diacritics
 
