@@ -7,14 +7,11 @@ var test = require('tape')
 var lint = require('..')
 
 test('linter-retextjs', function(t) {
-  t.plan(2)
+  t.plan(1)
 
   atom.workspace.destroyActivePaneItem()
 
   Promise.resolve()
-    .then(function() {
-      return atom.packages.activatePackage(path.join(__dirname, '..'))
-    })
     .then(function() {
       return atom.packages.activatePackage('language-gfm')
     })
