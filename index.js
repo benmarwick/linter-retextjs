@@ -1,171 +1,154 @@
-/**
- * @author Cameron Chamberlain & Ben Marwick
- * @copyright 2016 Cameron Chamberlain, based on atom-linter-alex 2015 Titus Wormer.
- * @license MIT
- * @module linter:retextjs
- * @fileoverview Linter.
- */
+'use strict'
 
-/* global atom Promise */
-/* eslint-env node */
+/* eslint-env node, browser */
+/* global atom */
 
-'use strict';
+var CompositeDisposable = require('atom').CompositeDisposable
 
-/*
- * Dependencies (retext is lazy-loaded later).
- */
+exports.activate = activate
+exports.deactivate = deactivate
+exports.provideLinter = provideLinter
 
-const deps = require('atom-package-deps');
-const minimatch = require('minimatch');
-let retext;
+// Internal variables.
+var load = loadOnce
+var minimatch
+var engine
+var unified
+var markdown
+var frontmatter
+var english
+var filter
+var remark2retext
+var cliches
+var equality
+var intensify
+var profanities
+var simplify
+var decamelize
+var passive
+var repeatedwords
+var contractions
+var usage
+var indefinitearticle
+var diacritics
+var idleCallbacks = []
+var subscriptions = new CompositeDisposable()
+var config = {}
 
-let cliches;
-let equality;
-let intensify;
-let profanities;
-let simplify;
-let decamelize;
-let passive;
-let repeatedwords;
-let contractions;
-let usage;
-let indefinitearticle;
-// let overuse;
-let diacritics;
+function lint(editor) {
+  load()
 
-/*
- * Constants.
- */
+  if (config.ignoreFiles && minimatch(editor.getPath(), config.ignoreFiles)) {
+    return []
+  }
 
-const config = atom.config;
 
-/**
- * Activate.
- */
-function activate() {
-  deps.install('linter-retextjs');
+  return engine({
+    processor: unified,
+    detectIgnore: config.detectIgnore,
+    detectConfig: config.detectConfig,
+    rcName: '.alexrc',
+    packageField: 'alex',
+    ignoreName: '.alexignore',
+    defaultConfig: transform(),
+    configTransform: transform
+  })(editor)
 }
 
-/**
- * Atom meets retext to catch suboptimal writing.
- *
- * @return {LinterConfiguration} - Configuration.
- */
-function linter() {
-  const CODE_EXPRESSION = /`([^`]+)`/g;
 
-  /**
-   * Transform a (stringified) vfile range to a linter
-   * nested-tuple.
-   *
-   * @param {Object} location - Positional information.
-   * @return {Array.<Array.<number>>} - Linter range.
-   */
-  function toRange(location) {
-    return [
-      [
-        Number(location.start.line) - 1,
-        Number(location.start.column) - 1,
-      ], [
-        Number(location.end.line) - 1,
-        Number(location.end.column) - 1,
-      ],
-    ];
+function provideLinter() {
+  return {
+    grammarScopes: config.scopes,
+    name: 'retextjs',
+    scope: 'file',
+    lintsOnChange: true,
+    lint: lint
   }
+}
 
-  /**
-   * Transform a reason for warning from retext into
-   * beautiful HTML.
-   *
-   * @param {string} reason - Messsage in plain-text.
-   * @return {string} - Messsage in HTML.
-   */
-  function toHTML(reason) {
-    return reason.replace(CODE_EXPRESSION, '<code>$1</code>');
-  }
+function activate() {
+  var schema = require('./package').configSchema
+  var id = window.requestIdleCallback(install)
+  idleCallbacks.push(id)
 
-  /**
-   * Transform VFile messages
-   * nested-tuple.
-   *
-   * @see https://github.com/wooorm/vfile#vfilemessage
-   *
-   * @param {VFileMessage} message - Virtual file error.
-   * @return {Object} - Linter error.
-   */
-  function transform(message) {
-    return {
-      severity: 'warning',
-      description: toHTML(message.reason),
-      file: this.getPath(),
-      position: toRange(message.location),
-    };
-  }
+  Object.keys(schema).forEach(function(key) {
+    subscriptions.add(atom.config.observe('linter-retextjs' + key, setter))
 
-  /**
-   * Handle on-the-fly or on-save (depending on the
-   * global atom-linter settings) events. Yeah!
-   *
-   * Loads `retext` on first invocation.
-   *
-   * @see https://github.com/atom-community/linter/wiki/Linter-API#messages
-   *
-   * @param {AtomTextEditor} editor - Access to editor.
-   * @return {Promise.<Message, Error>} - Promise
-   *  resolved with a list of linter-errors or an error.
-   */
-  function onchange(editor) {
-    const settings = config.get('linter-retextjs');
+    function setter(value) {
+      config[key] = value
+    }
+  })
 
-    if (minimatch(editor.getPath(), settings.ignoreFiles)) {
-      return [];
+
+
+  function install() {
+    idleCallbacks.splice(idleCallbacks.indexOf(id), 1)
+
+    // Install package dependencies
+    if (!atom.inSpecMode()) {
+      require('atom-package-deps').install('linter-retextjs')
     }
 
-    return new Promise((resolve, reject) => {
-      let messages;
+    // Load required modules.
+    load()
+  }
+}
 
-      if (!retext || !decamelize) {
-        retext = require('retext');
+function deactivate() {
+  idleCallbacks.forEach(removeIdleCallback)
+  idleCallbacks = []
 
-        cliches = require('retext-cliches');
-        equality = require('retext-equality');
-        intensify = require('retext-intensify');
-        profanities = require('retext-profanities');
-        simplify = require('retext-simplify');
-        decamelize = require('decamelize');
-        passive = require('retext-passive');
-        repeatedwords = require('retext-repeated-words');
-        contractions = require('retext-contractions');
-        usage = require('retext-usage');
-        indefinitearticle = require('retext-indefinite-article');
-        // overuse = require('retext-overuse');
-        diacritics = require('retext-diacritics');
-      }
+  subscriptions.dispose()
 
-      let text = editor.getText();
+  function removeIdleCallback(id) {
+    window.cancelIdleCallback(id)
+  }
+}
 
-      let ignore = [];
-      const isProse = editor.getRootScopeDescriptor().scopes.some((scope) =>
-        scope.indexOf('plain') > -1 || scope.indexOf('gfm') > -1);
+function loadOnce() {
+  engine = require('unified-engine-atom')
+  unified = require('unified')
+  english = require('retext-english')
+  markdown = require('remark-parse')
+  frontmatter = require('remark-frontmatter')
+  remark2retext = require('remark-retext')
+  filter = require('alex/filter')
+  minimatch = require('minimatch')
+  cliches = require('retext-cliches')
+  equality = require('retext-equality')
+  intensify = require('retext-intensify')
+  profanities = require('retext-profanities')
+  simplify = require('retext-simplify')
+  decamelize = require('decamelize')
+  passive = require('retext-passive')
+  repeatedwords = require('retext-repeated-words')
+  contractions = require('retext-contractions')
+  usage = require('retext-usage')
+  indefinitearticle = require('retext-indefinite-article')
+  // overuse = require('retext-overuse');
+  diacritics = require('retext-diacritics')
+  load = noop
+}
 
-      if (!isProse) {
-        ignore = settings.ignoreProgrammingWords;
+function noop() {}
 
+function transform(options) {
+  var settings = options || {}
 
-        // Make code mimic prose.
-        // Unfortunately decamelize offsets the column reported when it adds a space.
-        text = decamelize(text, ' ')
-          .replace(/>|<|#|@|:|!|\/|'|,|\||{|}|-|=|\(|\)|\[|\]|\*/g, ' ')
-          .replace(/;/g, '.');
-      }
-
-      try {
-        retext()
+  return {
+    plugins: [
+      markdown,
+      [frontmatter, ['yaml', 'toml']],
+      [
+        remark2retext,
+        unified()
+          .use(english)
+          .use(profanities)
           .use(cliches)
           .use(equality)
-          .use(intensify, { ignore })
+          .use(intensify)
           .use(profanities)
-          .use(simplify, { ignore })
+          .use(simplify)
           .use(passive)
           .use(repeatedwords)
           .use(contractions)
@@ -173,66 +156,29 @@ function linter() {
           .use(indefinitearticle)
           // .use(overuse)
           .use(diacritics)
-          .process(text, (err, file) => {
-            if (err) {
-              reject(err);
-              return;
-            }
-
-            messages = file.messages;
-          });
-      } catch (err) {
-        reject(err);
-        return;
-      }
-
-      resolve((messages || []).map(transform, editor));
-    });
+          .use(equality, {noBinary: settings.noBinary})
+      ],
+      [filter, {allow: settings.allow}],
+      severity
+    ]
   }
-
-  return {
-    grammarScopes: config.get('linter-retextjs').grammars,
-    name: 'retext',
-    scope: 'file',
-    lintsOnChange: true,
-    lint: onchange,
-  };
 }
 
-/*
- * Expose.
- */
+function severity() {
+  var map = {
+    0: null,
+    1: false,
+    2: true,
+    undefined: false
+  }
 
-module.exports = {
-  config: {
-    ignoreFiles: {
-      description: 'Disable files matching (minimatch) glob',
-      type: 'string',
-      default: '',
-    },
-    ignoreProgrammingWords: {
-      description: 'Ignore an array of words in code contexts.',
-      type: 'array',
-      default: [
-        'function',
-        'provide',
-        'require',
-        'some',
-        'then',
-        'try',
-        'type',
-      ],
-    },
-    grammars: {
-      description: 'List of scopes for languages to ' +
-          'checked. Note: setting new sources overwrites the ' +
-          'defaults.',
-      type: 'array',
-      default: [
-        '*',
-      ],
-    },
-  },
-  provideLinter: linter,
-  activate,
-};
+  return transformer
+
+  function transformer(tree, file) {
+    file.messages.forEach(transform)
+  }
+
+  function transform(message) {
+    message.fatal = map[message.profanitySeverity]
+  }
+}
