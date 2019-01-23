@@ -39,7 +39,7 @@
     "remark-retext": "^3.0.0",
     "retext-english": "^3.0.0",
     "no-cliches": "git+https://github.com/dunckr/no-cliches.git#6f8f2169a703af9fc97721cb1038c26bc028f118",
-    "retext": ">=2.0.0",
+    "retext": "^2.0.0",
     "retext-cliches": "^1.0.0",
     "retext-equality": "^3.8.0",
     "retext-intensify": "^1.1.0",
@@ -106,13 +106,13 @@
   "configSchema": {
     "detectConfig": {
       "title": "Config files",
-      "description": "Use `.alexrc` files and `alex` in `package.json` files.",
+      "description": "Use `.retextjsrc` files and `retextjs` in `package.json` files.",
       "type": "boolean",
       "default": true
     },
     "detectIgnore": {
       "title": "Ignore files",
-      "description": "Use `.alexignore` files.",
+      "description": "Use `.retextjsignore` files.",
       "type": "boolean",
       "default": true
     },

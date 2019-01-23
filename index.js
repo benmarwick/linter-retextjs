@@ -17,7 +17,6 @@ var unified
 var markdown
 var frontmatter
 var english
-var filter
 var remark2retext
 var cliches
 var equality
@@ -47,9 +46,9 @@ function lint(editor) {
     processor: unified,
     detectIgnore: config.detectIgnore,
     detectConfig: config.detectConfig,
-    rcName: '.alexrc',
-    packageField: 'alex',
-    ignoreName: '.alexignore',
+    rcName: '.retextjsrc',
+    packageField: 'retextjs',
+    ignoreName: '.retextjsignore',
     defaultConfig: transform(),
     configTransform: transform
   })(editor)
@@ -72,7 +71,7 @@ function activate() {
   idleCallbacks.push(id)
 
   Object.keys(schema).forEach(function(key) {
-    subscriptions.add(atom.config.observe('linter-retextjs' + key, setter))
+    subscriptions.add(atom.config.observe('linter-retextjs.' + key, setter))
 
     function setter(value) {
       config[key] = value
@@ -112,7 +111,6 @@ function loadOnce() {
   markdown = require('remark-parse')
   frontmatter = require('remark-frontmatter')
   remark2retext = require('remark-retext')
-  filter = require('alex/filter')
   minimatch = require('minimatch')
   cliches = require('retext-cliches')
   equality = require('retext-equality')
