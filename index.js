@@ -95,10 +95,10 @@ function linter() {
    */
   function transform(message) {
     return {
-      type: 'Info',
-      html: toHTML(message.reason),
-      filePath: this.getPath(),
-      range: toRange(message.location),
+      severity: 'warning',
+      description: toHTML(message.reason),
+      file: this.getPath(),
+      position: toRange(message.location),
     };
   }
 
@@ -194,7 +194,7 @@ function linter() {
     grammarScopes: config.get('linter-retextjs').grammars,
     name: 'retext',
     scope: 'file',
-    lintOnFly: true,
+    lintsOnChange: true,
     lint: onchange,
   };
 }
