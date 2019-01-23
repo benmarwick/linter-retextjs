@@ -1,1 +1,1 @@
-An majorly primitive dude, should have arrived 
+primitive dude should majorly an nut 
