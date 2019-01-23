@@ -25,11 +25,11 @@ test('linter-retextjs', function(t) {
       t.deepEqual(
         messages.map(flatten),
         [
-          'Use `A` before `majorly`, not `An` (retext-indefinite-article)',
-          'Replace `majorly` with `extremely` (retext-usage:majorly)',
           '`primitive` may be insensitive, use `simple`, `indigenous`, `hunter-gatherer` instead (retext-equality:savage)',
           '`dude` may be insensitive, use `person`, `friend`, `pal`, `folk`, `individual` instead (retext-equality:gal-guy)',
-          'Don’t use `should`, it lessens impact (retext-intensify:hedge)'
+          'Don’t use `should`, it lessens impact (retext-intensify:hedge)',
+           'Replace `majorly` with `extremely` (retext-usage:majorly)',
+           'Use `a` before `nut`, not `an` (retext-indefinite-article)'
         ],
         'should emit messages'
       )
