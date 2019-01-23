@@ -19,17 +19,6 @@ test('linter-retextjs', function(t) {
       return atom.packages.activatePackage('language-gfm')
     })
     .then(function() {
-      return atom.workspace.open(
-        path.join(path.resolve(__dirname, '..'), 'readme.md')
-      )
-    })
-    .then(function(editor) {
-      return lint.provideLinter().lint(editor)
-    })
-    .then(function(messages) {
-      t.equal(messages.length, 0, 'should start out without messages')
-    })
-    .then(function() {
       return atom.workspace.open(path.join(__dirname, 'invalid.md'))
     })
     .then(function(editor) {
