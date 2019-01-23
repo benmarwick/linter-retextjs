@@ -23,7 +23,6 @@ var equality
 var intensify
 var profanities
 var simplify
-var decamelize
 var passive
 var repeatedwords
 var contractions
@@ -117,7 +116,6 @@ function loadOnce() {
   intensify = require('retext-intensify')
   profanities = require('retext-profanities')
   simplify = require('retext-simplify')
-  decamelize = require('decamelize')
   passive = require('retext-passive')
   repeatedwords = require('retext-repeated-words')
   contractions = require('retext-contractions')

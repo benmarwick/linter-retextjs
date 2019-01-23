@@ -1,0 +1,98 @@
+{
+  "name": "linter-retextjs",
+  "version": "0.15.0",
+  "description": "Linter plugin using retext",
+  "license": "MIT",
+  "keywords": [
+    "markdown",
+    "text",
+    "professional",
+    "writing",
+    "language",
+    "english",
+    "hedge",
+    "linter"
+  ],
+  "author": {
+    "name": "Cameron Chamberlain & Ben Marwick",
+    "email": "benmarwick@gmail.com",
+    "url": "https://github.com/benmarwick/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/benmarwick/linter-retextjs.git"
+  },
+  "bugs": "https://github.com/benmarwick/linter-retextjs/issues",
+  "main": "index.js",
+  "files": [
+    "index.js"
+  ],
+  "engines": {
+    "atom": ">=1.0.0 <2.0.0"
+  },
+  "dependencies": {
+    "atom-package-deps": "^4.0.1",
+    "decamelize": "^1.2.0",
+    "install": "^0.6.0",
+    "minimatch": "^3.0.0",
+    "no-cliches": "git+https://github.com/dunckr/no-cliches.git#6f8f2169a703af9fc97721cb1038c26bc028f118",
+    "npm": "^3.8.1",
+    "retext": ">=2.0.0",
+    "retext-cliches": "^1.0.0",
+    "retext-equality": "^3.8.0",
+    "retext-intensify": "^1.1.0",
+    "retext-overuse": "^1.0.2",
+    "retext-profanities": "^1.1.0",
+    "retext-readability": "^1.3.0",
+    "retext-simplify": "^1.2.0",
+    "retext-passive": "^1.3.2",
+    "retext-repeated-words": "^1.2.2",
+    "retext-contractions": "^2.1.3",
+    "retext-usage": "git+https://github.com/kostasx/retext-usage.git",
+    "retext-indefinite-article": "^1.1.5",
+    "retext-diacritics": "^1.2.2"
+  },
+  "package-deps": [
+    "linter"
+  ],
+  "providedServices": {
+    "linter": {
+      "versions": {
+        "2.3.0": "provideLinter"
+      }
+    }
+  },
+  "devDependencies": {
+    "eslint": "^2.4.0",
+    "eslint-config-airbnb": "^6.1.0",
+    "eslint-plugin-react": "^4.2.1",
+    "jscs": "^2.11.0",
+    "jscs-jsdoc": "^1.3.1"
+  },
+  "scripts": {
+    "lint-api": "eslint .",
+    "lint-style": "jscs --reporter inline .",
+    "lint": "npm run lint-api && npm run lint-style",
+    "build-md": "remark . --quiet",
+    "build": "npm run build-md",
+    "test-api": "atom --test test/index.js",
+    "test": "npm run build && npm run lint"
+  },
+  "scopes": {
+    "title": "Scopes",
+    "description": "List of scopes for languages which will be checked (run `Editor: Log Cursor Scope` to determine the scopes for a file).",
+    "type": "array",
+    "items": {
+      "type": "string"
+    },
+    "default": [
+      "source.asciidoc",
+      "source.gfm",
+      "source.pfm",
+      "text.git-commit",
+      "text.plain",
+      "text.plain.null-grammar",
+      "text.md"
+    ]
+  }
+}
