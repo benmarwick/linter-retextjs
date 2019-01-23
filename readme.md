@@ -1,6 +1,6 @@
-# linter-retextjs [![Build Status](https://travis-ci.org/benmarwick/linter-retextjs.svg?branch=master)](https://travis-ci.org/benmarwick/linter-retextjs)
+# linter-retextjs [![Build Status](https://travis-ci.org/benmarwick/linter-retextjs.svg?branch=master)](https://travis-ci.org/benmarwick/linter-retextjs) [![apm](https://img.shields.io/apm/v/linter-retextjs.svg)](https://atom.io/packages/linter-retextjs)
 
-A plugin for [Atom's][atom] [Linter][linter] providing an interface to [retext][retext]. Retext is a natural language processor that includes plugins to check for bad prose. The full list of retext plugins is [here](https://github.com/retextjs/retext/blob/master/doc/plugins.md#list-of-plugins).
+A plugin for [Atom's][atom] [Linter][linter] providing an interface to [retext][retext]. Retext is a natural language processor that includes plugins to check for bad prose. The full list of retext plugins is [here](https://github.com/retextjs/retext/blob/master/doc/plugins.md#list-of-plugins). The code is hosted at https://github.com/benmarwick/linter-retextjs
 
 ![](retextjs-demo.gif)
 
@@ -16,7 +16,7 @@ This package provides these [retext][retext] checkers:
 - [repeated words](https://github.com/retextjs/retext-repeated-words): check for repeated words
 - [simplify](https://github.com/retextjs/retext-simplify): check phrases for simpler alternatives
 - [contractions](https://github.com/retextjs/retext-contractions): check apostrophe use in contractions
-- [usage](https://github.com/kostasx/retext-usage): warn about incorrect English usage, similar to [linter-proselint](https://atom.io/packages/linter-proselint). 
+- [usage](https://github.com/kostasx/retext-usage): warn about incorrect English usage, similar to [linter-proselint](https://atom.io/packages/linter-proselint).
 - [indefinite article](https://github.com/retextjs/retext-indefinite-article): check if indefinite articles (`a`, `an`) are used correctly
 - [diacritics](https://github.com/retextjs/retext-diacritics): check for proper use of diacritics
 
