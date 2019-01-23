@@ -154,7 +154,6 @@ function transform(options) {
           .use(diacritics)
           .use(equality, {noBinary: settings.noBinary})
       ],
-      [filter, {allow: settings.allow}],
       severity
     ]
   }
